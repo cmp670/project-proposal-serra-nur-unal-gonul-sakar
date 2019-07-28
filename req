@@ -1,0 +1,7 @@
+conda info -a
+
+conda install -c anaconda nltk
+conda install numpy tensorflow
+pip install snowballstemmer
+python setup.py install
+pip install tflearn

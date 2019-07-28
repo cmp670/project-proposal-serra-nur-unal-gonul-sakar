@@ -6,23 +6,27 @@
         },
         {"tag": "bitiş",
          "patterns": ["Görüşürüz"],
-         "responses": ["Bye!", "İyi günler :)", "Görüşürüz :D"]
+         "responses": ["İyi günler :)", "Görüşürüz :D"]
         },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        {"tag": "Hata girme",
+         "patterns": ["Hata kaydı girme", "hata girme"],
+         "responses": ["CQ uygulaması açılır...."]
         },
-        {"tag": "hours",
-         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
-         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
+        {"tag": "Hata doğrulama",
+         "patterns": ["hata doğrulama"],
+         "responses": ["Hata kaydını CQ uygulamasından aç ve sağ üstten doğrulayı seçeneğini seç"]
+        },
+        {"tag": "CQ döngüsü",
+         "patterns": ["CQ döngüsünü aç", "CQ hata kayıt yaşam döngüsünü aç"],
+         "responses": ["CQ döngüsü açılır"]
+        },
+        {"tag": "Kayıt kapatma",
+         "patterns": ["Hata kaydı kapatma", "Kayıt kapatma"],
+         "responses": ["Hata kaydını CQ uygulamasından aç ve sağ üstten kapat seçeneğini seç. Not: Sadece hatayı giren kişinin hata kapatmaya yetkisi vardır."]
         },
         {"tag": "payments",
          "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
          "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
-        },
-        {"tag": "opentoday",
-         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
-         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
         }
    ]
 }

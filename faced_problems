@@ -20,5 +20,7 @@ downgrad version h5py to 2.8.0
 
 
 3..
-conda update --force conda
-conda install -c anaconda setuptools
+tflearn --> pip install tflearn dene değilse zip le
+
+4..
+

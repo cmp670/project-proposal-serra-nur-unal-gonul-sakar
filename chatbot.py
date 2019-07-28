@@ -1,6 +1,5 @@
 # https://techwithtim.net/tutorials/ai-chatbot/part-4/
 
-
 import nltk
 import numpy
 import tflearn
@@ -82,11 +81,11 @@ net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
-try:
-    model.load("model.tflearn")
-except:
-    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-    model.save("model.tflearn")
+
+#model.load("model.tflearn")
+
+model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+model.save("model.tflearn")
 
 
 
@@ -110,10 +109,10 @@ def bag_of_words(s, words):
 
 
 def chat():
-    print("Start talking with the bot (type quit to stop)!")
+    print("Merhaba ben MAYA, Nasıl yardımcı olabilirim? (Çıkmak için 'Çıkış' yaz)")
     while True:
-        inp = input("You: ")
-        if inp.lower() == "quit":
+        inp = input("Sen: ")
+        if inp.lower() == "Çıkış":
             break
 
         results = model.predict([bag_of_words(inp, words)])
@@ -124,7 +123,7 @@ def chat():
             if tg['tag'] == tag:
                 responses = tg['responses']
 
-        print(random.choice(responses))
+        print((random.choice(responses)))
 
 
 chat()
