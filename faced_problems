@@ -1,0 +1,24 @@
+
+# karsilasilan sorunlar
+
+
+1..
+tensorflow import error (https://github.com/tensorflow/tensorflow/issues/22794)
+-> solution
+conda create --name tf-gpu
+conda install -c aaronzs tensorflow-gpu
+conda install -c anaconda cudatoolkit
+conda install -c anaconda cudnn
+conda install keras-gpu
+
+2.
+.
+after that ---> AttributeError: type object 'h5py.h5r.Reference' has no attribute '__reduce_cython__' on using “from keras.utils import HDF5Matrix”
+-> solution
+downgrad version h5py to 2.8.0
+
+
+
+3..
+conda update --force conda
+conda install -c anaconda setuptools
