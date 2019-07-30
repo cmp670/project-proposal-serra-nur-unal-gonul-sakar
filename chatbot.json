@@ -1,32 +1,19 @@
 {"intents": [
-        {"tag": "başlangıç",
-         "patterns": ["Selam", "Merhaba", "Nasılsın?", "İyi günler", "Günaydın"],
-         "responses": ["Merhaba", "Seni gördüğüme sevindim", "Nasıl yardımcı olabilirim?"],
-         "context_set": ""
-        },
-        {"tag": "bitiş",
-         "patterns": ["Görüşürüz"],
-         "responses": ["İyi günler :)", "Görüşürüz :D"]
-        },
         {"tag": "Hata girme",
-         "patterns": ["Hata kaydı girme", "hata girme"],
-         "responses": ["CQ uygulaması açılır...."]
+         "patterns": ["Hata kaydı girme", "hata girme", "Hata kaydı girmek", "hata girmek"],
+         "responses": ["Hata girme-CQ uygulaması açılır.... linki de verilebilir"]
         },
         {"tag": "Hata doğrulama",
          "patterns": ["hata doğrulama"],
-         "responses": ["Hata kaydını CQ uygulamasından aç ve sağ üstten doğrulayı seçeneğini seç"]
+         "responses": ["Hata doğrulama-Hata kaydını CQ uygulamasından aç ve sağ üstten doğrulayı seçeneğini seç"]
         },
         {"tag": "CQ döngüsü",
          "patterns": ["CQ döngüsünü aç", "CQ hata kayıt yaşam döngüsünü aç"],
-         "responses": ["CQ döngüsü açılır"]
+         "responses": ["CQ döngüsü-CQ döngüsü açılır"]
         },
         {"tag": "Kayıt kapatma",
          "patterns": ["Hata kaydı kapatma", "Kayıt kapatma"],
-         "responses": ["Hata kaydını CQ uygulamasından aç ve sağ üstten kapat seçeneğini seç. Not: Sadece hatayı giren kişinin hata kapatmaya yetkisi vardır."]
-        },
-        {"tag": "payments",
-         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
-         "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
+         "responses": ["Kayıt kapatma-Hata kaydını CQ uygulamasından aç ve sağ üstten kapat seçeneğini seç. Not: Sadece hatayı giren kişinin hata kapatmaya yetkisi vardır."]
         }
    ]
 }

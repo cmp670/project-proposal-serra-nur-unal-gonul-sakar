@@ -8,16 +8,16 @@ import json
 import pickle
 from snowballstemmer import TurkishStemmer
 import tensorflow
+import os
+
+
+if __name__ == '__main__':
+
+    with open("chatbot.json", encoding='utf-8') as file:
+        data = json.load(file)
 
 
 stemmer = TurkishStemmer()
-
-# print(stemmer.stemWord("oltam"))
-
-
-with open("chatbot.json") as file:
-    data = json.load(file)
-
 
 try:
     with open("data.pickle", "rb") as f:
@@ -25,6 +25,7 @@ try:
 except:
     words = []
     labels = []
+    # [[hata, kaydı, girme], [hata, girme]]
     docs_x = []
     docs_y = []
 
@@ -38,9 +39,13 @@ except:
         if intent["tag"] not in labels:
             labels.append(intent["tag"])
 
+    # stemming
     words = [stemmer.stemWord(w.lower()) for w in words if w != "?"]
+
+    # convert list to set so the duplicate values are eliminated
     words = sorted(list(set(words)))
 
+    # tags in .json file
     labels = sorted(labels)
 
     training = []
@@ -88,9 +93,6 @@ model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
 model.save("model.tflearn")
 
 
-
-
-
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
 
@@ -105,11 +107,8 @@ def bag_of_words(s, words):
     return numpy.array(bag)
 
 
-
-
-
 def chat():
-    print("Merhaba ben MAYA, Nasıl yardımcı olabilirim? (Çıkmak için 'Çıkış' yaz)")
+    print("Merhaba ben MAYA, lütfen sorularınızı cümle şeklinde basit bir formda sorunuzu. (ör: Hata girmek, ...)")
     while True:
         inp = input("Sen: ")
         if inp.lower() == "Çıkış":
@@ -127,3 +126,4 @@ def chat():
 
 
 chat()
+os.remove("data.pickle")
